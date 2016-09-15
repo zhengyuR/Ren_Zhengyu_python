@@ -44,7 +44,7 @@ def length(string):
     Define a function that computes the length of a given list or string.  
     """
     number=0#the length of the string starts from 0
-    for num in string:
+    for num in string:#go over all the letter in the string
         number=number+1
     print('the length is',number)
 length('apple')
@@ -70,6 +70,7 @@ def translate(x):
     return the string"tothohisosisosfofunon".
     """
     string=""#set up a new string
+    x=x.replace(" ","")#take care of spaces
     for i in range(0,len(x)):#go over all the letters in the text
         if (x=="a"or x=="A"or x=="e"or x=="E"or x=="i"or x=="I"or x=="o"or x=="O"or x=="u"or x=="U"):
         #check if the letter is a vowel          
@@ -104,6 +105,7 @@ def reverse(string):
     """
     Define a function reverse()that computes the reversal of a string. 
     """
+    string=string.replace(" ","")#take care of spaces
     if len(string) <= 1:#if the length of the string is 1,hold
         return string
     else:
@@ -115,14 +117,13 @@ def is_palindrome(string):
     """
     Define a function is_palindrome()that recognizes palindromes. 
     """
-    for i in range(0,len(string)):#go over all the character in the string
-        if string[i]==string[-(i+1)]:#compare the character at the symmetric position
-            continue
-        else:
-            return False#if the characters are different, stop
-            break
-    return True 
-is_palindrome('apple')
+    string = string.upper()
+    if reverse(string) == string:
+    #use function reverse() to check if the reverse of the string is same as the original string
+            return True
+    else:
+            return False
+is_palindrome('Radar')
 
 #9
 def is_member(x,a):
