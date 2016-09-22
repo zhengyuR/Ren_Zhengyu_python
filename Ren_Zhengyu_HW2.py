@@ -216,4 +216,31 @@ translate(["merry", "christmas", "and", "happy", "new","year"])
 """
 Implement the higher order functions map(), filter()and reduce(). 
 """
-def   
+def map(function,list):
+    newlist=[]#create a new list
+    for i in list:#go over all numbers in the list
+        newlist.append(function(i))
+        #use method 'append()' to add function (i) to the list(work as map)
+    return newlist 
+map(lambda x: 1 + x,[1,2,3,4,5]) #use 'lambda' to crate an anonymous function 
+
+
+def filter(function,list):
+    newlist = []#create a new list
+    for i in list:#go over all numbers in the list
+        if function(i) == True: #check if the number satisfy the function
+            newlist.append(i)#if the number satisfied, add it to the new list
+    return newlist
+    
+filter(lambda x: x > 3, [1, 2, 3, 4, 5]) #use 'lambda' to crate an anonymous function
+
+
+def reduce(function,list):
+    reduction = list[0]#pick up the first number in the list
+                       #suppose this number would be our final answer
+    for i in range(0,len(list)):#go over all number in the list
+        reduction = function(reduction,list[i])
+        #apply function to the number we picked up previously compare it to the
+        #new one
+    return reduction
+reduce(max,[2,3,9,5,6])
