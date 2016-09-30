@@ -14,6 +14,10 @@ def max(a,b):
     """
     Define a function max()that takes two numbers as arguments and returns 
     the largest of them. Use the if-then-else construct available in Python.
+    Parameters:
+    a,b-numbers we input
+    Returns:
+    the larger number of two
     """
     if a > b:
         print(a,'is maximum')
@@ -30,6 +34,10 @@ def max_of_three(a,b,c):
     """
     Define a function max_of_three()that takes three numbers as arguments 
     and returns the largest of them. 
+    Parameters:
+    a,b,c-numbers we input
+    Returns:
+    the largest number of three
     """
     if a>=b:                   #set up a new parameter to compare
         t=a
@@ -47,6 +55,10 @@ max_of_three(4,3,4)
 def length(string):
     """
     Define a function that computes the length of a given list or string.  
+    Parameters:
+    string-the string we input
+    Returns:
+    a number of the string's length
     """
     number=0#the length of the string starts from 0
     for num in string:#go over all the letter in the string
@@ -59,6 +71,10 @@ def character(x):
     """
     Write a function that takes a character (i.e. a string of length 1) and
     returns True if it is a vowel, False otherwise. 
+    Parameters:
+    x-a letter we input
+    Returns:
+    True if the letter is vowel, false otherwise
     """
     if (x=="a"or x=="A"or x=="e"or x=="E"or x=="i"or x=="I"or x=="o"or x=="O"or x=="u"or x=="U"):
         return('True')
@@ -73,6 +89,10 @@ def translate(x):
     (Swedish for "robber's language"). That is, double every consonant and place
     an occurrence of "o"in between. For example, translate("this is fun") should 
     return the string"tothohisosisosfofunon".
+    Parameters:
+    x-a string we input
+    Returns:
+    the "robber's language" translation of the string we input
     """
     string=""#set up a new string
     x=x.replace(" ","")#take care of spaces
@@ -91,6 +111,11 @@ def sum(inputList):
     """
     Define a function sum()and a function multiply()that sums and multiplies all 
     the numbers in a list of numbers. 
+    Parameters:
+    inputList-a list of number we input
+    Returns:
+    the sum of all number in the list
+    the product of all number in the list
     """
     sum=0#the sum of the list starts from 0
     for num in inputList:
@@ -109,6 +134,10 @@ multiply([1,2,3,4])
 def reverse(string):
     """
     Define a function reverse()that computes the reversal of a string. 
+    Parameters:
+    string-a string we input
+    Returns:
+    the reversed string
     """
     string=string.replace(" ","")#take care of spaces
     if len(string) <= 1:#if the length of the string is 1,hold
@@ -121,6 +150,10 @@ reverse('I am testing')
 def is_palindrome(string):
     """
     Define a function is_palindrome()that recognizes palindromes. 
+    Parameters:
+    string-a string we input
+    Returns:
+    True if the string is palindromes, false if not
     """
     string = string.upper()
     if reverse(string) == string:
@@ -134,7 +167,12 @@ is_palindrome('Radar')
 def is_member(x,a):
     """
     Write a function is_member()that takes a value x and a list of values a, 
-    and returns True if xis a member of a,False otherwise. 
+    and returns True if x is a member of a,False otherwise.
+    Parameters:
+    x-a number we input
+    a-a list we input
+    Returns:
+    True if number 'x' is in list 'a', false if not
     """
     for i in range(0,len(a)):#go over all the number in the list
         if x == a[i]:#compare x to the number in the list to see if they are the same
@@ -147,7 +185,11 @@ is_member(3,[2,4,5])
 def overlapping(x,y):
     """
     Define a function overlapping()that takes two lists and returns True if they 
-    have at least one member in common, False otherwise. 
+    have at least one member in common, False otherwise.
+    Parameters:
+    x,y-two lists we input
+    Returns:
+    True if there is a overlapping number in two lists, false if not
     """
     for i in range(0,len(x)):
         for j in range(0,len(y)):
@@ -159,11 +201,15 @@ def overlapping(x,y):
 overlapping([3,4,5],[6,7,3])
 
 #11
-
 def generate_n_chars(x,y):
     """
     Define a function generate_n_chars()that takes an integer nand a character 
-    c and returns a string, ncharacters long.
+    c and returns a string, n characters long.
+    Parameters:
+    x-a number we input
+    y-a letter we input
+    Returns:
+    the letter we input can appear 'x' times
     """
     s = "" #set up a new string
     for i in range(x):#number that character need to repeat
@@ -172,9 +218,15 @@ def generate_n_chars(x,y):
 generate_n_chars(5,"x") 
 
 #12
-#Define a procedure histogram()that takes a list of integers and prints
-#a histogram to the screen.
 def histogram(list):
+    """
+    Define a procedure histogram()that takes a list of integers and prints
+    a histogram to the screen.
+    Parameters:
+    list-a list we input
+    Returns:
+    the histogram '*' will appear as many times as each element in the list we input
+    """
     for i in range(0,len(list)):#go over the number in the list
         print('*'*list[i]) 
 histogram([4,9,7])
@@ -184,6 +236,10 @@ def max_in_list(list):
     """
     Write a function max_in_list()that takes a list of numbers and returns the 
     largest one. 
+    Parameters:
+    list-a list we input
+    Returns:
+    the largest number in the list
     """
     x=list[0] #set x be the first number in the list
     for i in range(0,len(list)):#go over the number in the list
@@ -199,6 +255,10 @@ def length(word):
     """
     Write a program that maps a list of words into a list of integers representing
     the lengths of the correponding words. 
+    Parameters:
+    word-a list consists different words
+    Returns:
+    a list of the length of each word in the list we input
     """
     list=[]#set up a new list
     for i in range(0,len(word)):
@@ -211,6 +271,10 @@ def find_longest_word(list):
     """
     Write a function find_longest_word()that takes a list of words and returns 
     the length of the longest one. 
+    Parameters:
+    list-a list consists different words
+    Returns:
+    the longest word in the list
     """
     x=len(list[0]) #set x be the first length of word in the list
     for i in range(0,len(list)):
@@ -226,6 +290,11 @@ def filter_long_words(list,n):
     """
     Write a function filter_long_words()that takes a list of words and an integer 
     n and returns the list of words that are longer than n.
+    Parameters:
+    list-a list consists different words
+    n-a number we input
+    Returns:
+    a new list that filtered the word longer than 'n'
     """
     numberlist=[]#set up a new list
     for i in range(0,len(list)):
