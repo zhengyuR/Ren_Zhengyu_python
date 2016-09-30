@@ -8,7 +8,14 @@ Created on Thu Sep 15 19:29:16 2016
 """
 use it to translate your Christmas cards from English into Swedish
 """
-def lexicon_dic(inputWord):#define the dictionary that we will use later 
+def lexicon_dic(inputWord):#define the dictionary that we will use later
+   """
+   Define a function working as a dictionary
+   Parameters:
+   inputWord-a string we input
+   Returns:
+   the translation of the string we input by this dictionary
+   """ 
     lexicon_dic={"merry":"god", "christmas":"jul", "and":"och", 
                  "happy":"gott", "new":"nytt", "year":"ar"}
                  #import the dictionary for translation
@@ -18,6 +25,13 @@ def lexicon_dic(inputWord):#define the dictionary that we will use later
              return inputWord
              # if word is not in the dictionary, keep the word
 def translate(string):
+   """
+   Define a function translate your Christmas cards from English into Swedish
+   Parameters:
+   string-a string we input
+   Returns:
+   the translation in Swedish
+   """ 
     words = string.split( );
     translation = ""#create a new string
     for i in words:
@@ -32,6 +46,10 @@ def char_freq(string):
    """
    Write a function char_freq()that takes a string and builds a
    frequency listing of the characters contained in it. 
+   Parameters:
+   string-a string we input
+   Returns:
+   show how many times the each character appears in the string we input
    """
    dictionary = {} #create a new dictionary
    for i in string:#go through all letters in the string
@@ -48,6 +66,10 @@ def rot_13(string):
    """
    implement an encoder/decoder of ROT-13. Then read the following secret 
    message: Pnrfne pvcure? V zhpu cersre Pnrfne fnynq!
+   Parameters:
+   string-a string we input
+   Returns:
+   the decoded string
    """  
    key = {'a':'n', 'b':'o', 'c':'p', 'd':'q', 'e':'r', 'f':'s', 'g':'t', 'h':'u', 
        'i':'v', 'j':'w', 'k':'x', 'l':'y', 'm':'z', 'n':'a', 'o':'b', 'p':'c', 
@@ -72,6 +94,10 @@ def correct(string):
    string and sees to it that 1) two or more occurrences of the space 
    character is compressed into one, and 2) inserts an extra space
    after a period if the period is directly followed by a letter.
+   Parameters:
+   string-a string we input
+   Returns:
+   the correction of the string
    """  
    import re#import Regular expression operations
    correction = re.sub(' +',' ',string)# compressed the extra space
@@ -84,6 +110,10 @@ def make_3sg_form(word):
    """
    define a function make_3sg_form()which given a verb in infinitive
    form returns its third person singular form. 
+   Parameters:
+   word-a word(verb) we input
+   Returns:
+   the 3rd perston singular form of the verb
    """
    newWord = ''#creat a new string
    #use method 'endswith() to judge different situation'
@@ -112,6 +142,10 @@ def make_ing_form(verb):
    Define a function
    make_ing_form()which given a verb in infinitive form returns its
    present participle form.
+   Parameters:
+   verb-a word(verb) we input
+   Returns:
+   the present participle form of the verb
    """  
    if verb.endswith('e'):
        presentverb = verb[:-1]+'ing'
@@ -135,7 +169,11 @@ make_ing_form('hug')
 def max_in_list(list):
    """
    Using the higher order function reduce(), write a function max_in_list()that
-   takes a list of numbers and returns the largest one. 
+   takes a list of numbers and returns the largest one.
+   Parameters:
+   list-a list of number we input
+   Returns:
+   the largest number in the list
    """  
    import functools #import functools for higher order function 'reduce()'
    #so that we can return to 'reduce'
@@ -148,6 +186,10 @@ Write a program that maps a list of words into a list of integers
 representing the lengths of the correponding words. Write it in
 three different ways: 1) using a for-loop, 2) using the higher order
 function map(), and 3) using list comprehensions. 
+Parameters:
+word-a list of word we input
+Returns:
+a list of number which count the length of word in the list we input
 """
 #using a for-loop
 def map_list(words):
@@ -178,6 +220,10 @@ def find_longest_word(string):
    Write a function find_longest_word()that takes a list of words
    and returns the length of the longest one. Use only higher order
    functions. 
+   Parameters:
+   string-a string we input
+   Returns:
+   the longest word in the list
    """ 
    return max(list(map(len,string)))
    #use method 'map(function, iterable...)to deal with the length of all words
@@ -190,6 +236,11 @@ def filter_long_words(list,n):
     """
     Write a function filter_long_words()that takes a list of words and an integer 
     n and returns the list of words that are longer than n.
+    arameters:
+    list-a list of word we input
+    n-a number we input
+    Returns:
+    a new list that filtered the word in the list we input longer than 'n'
     """
     numberlist=[]#set up a new list
     for i in range(0,len(list)):
@@ -206,6 +257,10 @@ def translate(inputWords):
    Use the higher order function map()to write
    a function translate() that takes a list of English words and
    returns a list of Swedish words. 
+   Parameters:
+   inputWords-a list of word we input
+   Returns:
+   the Swedish translation of the list 
    """ 
    lex_dic = {"merry":"god", "christmas":"jul", "and":"och", "happy":"gott",
            "new":"nytt", "year":"år"}#import the dictionary to translate
@@ -216,26 +271,47 @@ translate(["merry", "christmas", "and", "happy", "new","year"])
 """
 Implement the higher order functions map(), filter()and reduce(). 
 """
-def map(function,list):
+def newmap(function,list):
+    """
+    Defining a function work as map function 
+    Parameters: 
+    function-a function we defined
+    list-a list of number we input
+    Return: apply the function to the list we input
+    """
     newlist=[]#create a new list
     for i in list:#go over all numbers in the list
         newlist.append(function(i))
         #use method 'append()' to add function (i) to the list(work as map)
     return newlist 
-map(lambda x: 1 + x,[1,2,3,4,5]) #use 'lambda' to crate an anonymous function 
+newmap(lambda x: 1 + x,[1,2,3,4,5]) #use 'lambda' to crate an anonymous function 
 
 
-def filter(function,list):
+def newfilter(function,list):
+    """
+    Defining a function work as filter function 
+    Parameters: 
+    function-a function we defined
+    list-a list of number we input
+    Return: filter the number in the list which do not satisfy the function we defined
+    """    
     newlist = []#create a new list
     for i in list:#go over all numbers in the list
         if function(i) == True: #check if the number satisfy the function
             newlist.append(i)#if the number satisfied, add it to the new list
     return newlist
     
-filter(lambda x: x > 3, [1, 2, 3, 4, 5]) #use 'lambda' to crate an anonymous function
+newfilter(lambda x: x > 3, [1, 2, 3, 4, 5]) #use 'lambda' to crate an anonymous function
 
 
-def reduce(function,list):
+def newreduce(function,list):
+    """
+    Defining a function work as reduce function 
+    Parameters: 
+    function-a function we defined
+    list-a list of number we input
+    Return: reduce the number in the list that satisfy the function we defined
+    """
     reduction = list[0]#pick up the first number in the list
                        #suppose this number would be our final answer
     for i in range(0,len(list)):#go over all number in the list
@@ -243,4 +319,4 @@ def reduce(function,list):
         #apply function to the number we picked up previously compare it to the
         #new one
     return reduction
-reduce(max,[2,3,9,5,6])
+newreduce(max,[2,3,9,5,6])
