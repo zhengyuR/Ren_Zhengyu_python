@@ -5,6 +5,11 @@ Created on Thu Sep  8 19:47:57 2016
 @author: ren
 """
 #1
+#Your marks are influenced by your format, please refer to the format that Professor G has shown during the lecture. The content
+#we expect are the problem you are trying to solve, the input variables and the output you expect. Once you have corrected them,
+#I am more than happy to give back your mark!
+#Overall Comment: Very good assignment! You have covered all the possible situations. And you commented them well which shows
+#you have a very good understanding of the calculation and code.
 def max(a,b):
     """
     Define a function max()that takes two numbers as arguments and returns 
