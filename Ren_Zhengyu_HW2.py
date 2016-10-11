@@ -4,6 +4,7 @@ Created on Thu Sep 15 19:29:16 2016
 
 @author: ren
 """
+#Overall Comment: Very good exercise, the assignment is in good format, your logic and code work effectively and efficienty.
 #1
 """
 use it to translate your Christmas cards from English into Swedish
