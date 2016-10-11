@@ -4,6 +4,8 @@ Created on Thu Sep 22 19:22:41 2016
 
 @author: ren
 """
+#Overall Comment: Try to stay with clear format with your assignment. Explain the problems you are trying to solve and then
+#                 explain in detail about your logic and format.
 import pandas as pd#import pandas package
 data=pd.read_table('/Users/ren/Documents/学校/Github/iris.data.txt',header=0,sep=',')
 #the column name had already been edited in the text editor
